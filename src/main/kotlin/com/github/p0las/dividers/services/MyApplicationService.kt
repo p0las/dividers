@@ -1,6 +1,6 @@
-package org.jetbrains.plugins.template.services
+package com.github.p0las.dividers.services
 
-import org.jetbrains.plugins.template.MyBundle
+import com.github.p0las.dividers.MyBundle
 
 class MyApplicationService {
 
