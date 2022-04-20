@@ -5,9 +5,15 @@
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
 
 <!-- Plugin description -->
-Dividers plugin. Allows creating banners and dividers to visually separate your code:  
+Allows creating banners and dividers to visually separate your code:  
 
-`---------------------------------------<  some text here  >------------------------------------`  
+`--------------------<  some text here  >-----------------------`
+
+you can customize the banners by providing a pattern to repeat:  
+
+`=+==+==+==+==+==+==+<  some text here  >=+==+==+==+==+==+==+==+=`
+
+`.oOo.oOo.oOo.oOo.oOo<  some text here  >oOo.oOo.oOo.oOo.oOo.oOo.`
 
  
 <!-- Plugin description end -->
