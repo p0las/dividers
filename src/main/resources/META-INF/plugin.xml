@@ -2,7 +2,7 @@
 <idea-plugin>
     <id>com.github.p0las.dividers</id>
     <name>dividers</name>
-    <vendor>p0las</vendor>
+    <vendor>Pawel Olas</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
@@ -15,4 +15,15 @@
         <listener class="com.github.p0las.dividers.listeners.MyProjectManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
+
+    <actions>
+        <action id="EditorBasics.EditorIllustrationAction"
+                class="com.github.p0las.dividers.actions.SingleLineDividerAction"
+                text="Divider - one line"
+                description="Adds comment divider with the text in the middle."
+                icon="">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+    </actions>
+
 </idea-plugin>
