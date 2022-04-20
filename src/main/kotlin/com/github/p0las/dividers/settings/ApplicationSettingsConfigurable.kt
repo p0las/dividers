@@ -2,7 +2,6 @@ package com.github.p0las.dividers.settings
 
 import com.intellij.openapi.options.Configurable
 import org.jetbrains.annotations.Nls
-import java.io.File
 import javax.swing.JComponent
 
 
@@ -32,9 +31,6 @@ class ApplicationSettingsConfigurable : Configurable {
         var modified = mySettingsComponent!!.commentText != settings.commentSymbol
         modified = modified or (mySettingsComponent!!.lineLength != settings.lineLength)
         modified = modified or (mySettingsComponent!!.dividerText != settings.dividerSymbol)
-        File("c:/temp/divider.log").appendText("isModified\n")
-        File("c:/temp/divider.log").appendText(modified.toString())
-        File("c:/temp/divider.log").appendText("\n")
         return modified
     }
 
@@ -43,9 +39,6 @@ class ApplicationSettingsConfigurable : Configurable {
         settings.commentSymbol = mySettingsComponent!!.commentText
         settings.lineLength = mySettingsComponent!!.lineLength
         settings.dividerSymbol = mySettingsComponent!!.dividerText
-        File("c:/temp/divider.log").appendText("apply\n")
-        File("c:/temp/divider.log").appendText(settings.commentSymbol)
-        File("c:/temp/divider.log").appendText("\n")
     }
 
     override fun reset() {
@@ -53,7 +46,6 @@ class ApplicationSettingsConfigurable : Configurable {
         mySettingsComponent!!.commentText = settings.commentSymbol
         mySettingsComponent!!.lineLength = settings.lineLength
         mySettingsComponent!!.dividerText = settings.dividerSymbol
-        File("c:/temp/divider.log").appendText("reset\n")
     }
 
     override fun disposeUIResources() {

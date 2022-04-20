@@ -6,7 +6,6 @@ import com.intellij.ui.components.JBTextField
 import com.intellij.ui.components.JBCheckBox
 import com.intellij.util.ui.FormBuilder
 import com.intellij.ui.components.JBLabel
-import java.io.File
 import javax.swing.JComponent
 
 /**

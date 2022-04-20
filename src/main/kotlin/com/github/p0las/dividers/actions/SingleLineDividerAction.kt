@@ -6,7 +6,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.CommonDataKeys
 import com.intellij.openapi.command.WriteCommandAction
 import com.intellij.openapi.util.TextRange
-import java.io.File
 
 /**
  * Menu action to replace a selection of characters with a fixed string.
