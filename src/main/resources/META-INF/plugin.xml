@@ -21,7 +21,7 @@
                 class="com.github.p0las.dividers.actions.SingleLineDividerAction"
                 text="Divider - one line"
                 description="Adds comment divider with the text in the middle."
-                icon="">
+                >
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
         </action>
     </actions>
