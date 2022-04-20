@@ -1,5 +1,6 @@
 package com.github.p0las.dividers.actions
 
+import com.github.p0las.dividers.settings.AppSettingsState
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.CommonDataKeys
@@ -30,15 +31,15 @@ class SingleLineDividerAction : AnAction() {
         val start = primaryCaret.selectionStart
         val end = primaryCaret.selectionEnd
 
-        File("C:/temp/kotlin.log").writeText(editor.editorKind.toString())
-
         val range = TextRange(start,end)
         val text = editor.document.getText(range)
         val textTrimmed = text.trim()
 
-        val lineLength:Int = 120
-        val dividerPattern = "-"
-        val comment = "#"
+        val settings: AppSettingsState = AppSettingsState.getInstance()
+
+        val lineLength:Int = settings.lineLength.toInt()
+        val dividerPattern = settings.dividerSymbol
+        val comment = settings.commentSymbol
 
         var margin:Int = 0
         for (i in text) {

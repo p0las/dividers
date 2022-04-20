@@ -17,7 +17,7 @@
     </applicationListeners>
 
     <actions>
-        <action id="EditorBasics.EditorIllustrationAction"
+        <action id="com.github.p0las.dividers.SingleLineDividerAction"
                 class="com.github.p0las.dividers.actions.SingleLineDividerAction"
                 text="Divider - one line"
                 description="Adds comment divider with the text in the middle."
@@ -25,5 +25,14 @@
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
         </action>
     </actions>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationConfigurable
+                parentId="tools"
+                instance="com.github.p0las.dividers.settings.ApplicationSettingsConfigurable"
+                id="com.github.p0las.dividers.settings.ApplicationSettingsConfigurable"
+                displayName="Dividers settings"/>
+        <applicationService serviceImplementation="com.github.p0las.dividers.settings.AppSettingsState"/>
+    </extensions>
 
 </idea-plugin>
