@@ -8,7 +8,7 @@ import com.intellij.openapi.command.WriteCommandAction
 import com.intellij.openapi.util.TextRange
 
 
-class SingleLineDividerAction : AnAction() {
+class TripleLineDividerAction : AnAction() {
 
     override fun actionPerformed(e: AnActionEvent) {
         // Get all the required data from data keys
@@ -28,8 +28,8 @@ class SingleLineDividerAction : AnAction() {
 
         val settings: AppSettingsState = AppSettingsState.getInstance()
 
-        val lineLength:Int = settings.lineLength.toInt()
-        val dividerPattern = settings.dividerSymbol
+        val lineLength:Int = settings.lineLengthC.toInt()
+        val dividerPattern = settings.dividerSymbolC
         val comment = settings.commentSymbol
 
         var margin:Int = 0
@@ -43,13 +43,14 @@ class SingleLineDividerAction : AnAction() {
         }
         val marginOffset = " ".repeat(margin)
 
-        val length = (lineLength - textTrimmed.length - margin - 4)/2
+        val lineB = dividerPattern.repeat((lineLength-2)/dividerPattern.length)
+
+        val length = (lineLength - textTrimmed.length - margin)/2 - 2
         val line = dividerPattern.repeat(length/dividerPattern.length)
-
         val lineWithText = "$marginOffset$comment$line<  $textTrimmed  >$line$line".take(lineLength)
-
+        val externalLines = "$marginOffset$comment$lineB".take(lineLength)
         WriteCommandAction.runWriteCommandAction(project
-        ) { document.replaceString(start, end, "$lineWithText\n") }
+        ) { document.replaceString(start, end, "$externalLines\n$lineWithText\n$externalLines\n") }
         // De-select the text range that was just replaced
         primaryCaret.removeSelection()
     }

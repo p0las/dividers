@@ -17,13 +17,29 @@
     </applicationListeners>
 
     <actions>
-        <action id="com.github.p0las.dividers.SingleLineDividerAction"
-                class="com.github.p0las.dividers.actions.SingleLineDividerAction"
-                text="Divider - one line"
+        <action id="com.github.p0las.dividers.TripleLineDividerAction"
+                class="com.github.p0las.dividers.actions.TripleLineDividerAction"
+                text="dividers - three lines"
                 description="Adds comment divider with the text in the middle."
-                >
+        >
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
         </action>
+
+        <action id="com.github.p0las.dividers.SingleLineDividerActionB"
+                class="com.github.p0las.dividers.actions.SingleLineDividerActionB"
+                text="dividers - one line B"
+                description="Adds comment divider with the text in the middle."
+        >
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+        <action id="com.github.p0las.dividers.SingleLineDividerAction"
+                class="com.github.p0las.dividers.actions.SingleLineDividerAction"
+                text="dividers - one line A"
+                description="Adds comment divider with the text in the middle."
+        >
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+
     </actions>
 
     <extensions defaultExtensionNs="com.intellij">

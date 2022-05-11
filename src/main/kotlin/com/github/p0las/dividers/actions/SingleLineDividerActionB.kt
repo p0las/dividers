@@ -8,7 +8,7 @@ import com.intellij.openapi.command.WriteCommandAction
 import com.intellij.openapi.util.TextRange
 
 
-class SingleLineDividerAction : AnAction() {
+class SingleLineDividerActionB : AnAction() {
 
     override fun actionPerformed(e: AnActionEvent) {
         // Get all the required data from data keys
@@ -28,8 +28,8 @@ class SingleLineDividerAction : AnAction() {
 
         val settings: AppSettingsState = AppSettingsState.getInstance()
 
-        val lineLength:Int = settings.lineLength.toInt()
-        val dividerPattern = settings.dividerSymbol
+        val lineLength:Int = settings.lineLengthB.toInt()
+        val dividerPattern = settings.dividerSymbolB
         val comment = settings.commentSymbol
 
         var margin:Int = 0
@@ -45,7 +45,6 @@ class SingleLineDividerAction : AnAction() {
 
         val length = (lineLength - textTrimmed.length - margin - 4)/2
         val line = dividerPattern.repeat(length/dividerPattern.length)
-
         val lineWithText = "$marginOffset$comment$line<  $textTrimmed  >$line$line".take(lineLength)
 
         WriteCommandAction.runWriteCommandAction(project

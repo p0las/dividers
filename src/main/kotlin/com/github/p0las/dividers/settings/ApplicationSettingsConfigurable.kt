@@ -31,6 +31,10 @@ class ApplicationSettingsConfigurable : Configurable {
         var modified = mySettingsComponent!!.commentText != settings.commentSymbol
         modified = modified or (mySettingsComponent!!.lineLength != settings.lineLength)
         modified = modified or (mySettingsComponent!!.dividerText != settings.dividerSymbol)
+        modified = modified or (mySettingsComponent!!.lineLengthB != settings.lineLengthB)
+        modified = modified or (mySettingsComponent!!.dividerTextB != settings.dividerSymbolB)
+        modified = modified or (mySettingsComponent!!.lineLengthC != settings.lineLengthC)
+        modified = modified or (mySettingsComponent!!.dividerTextC != settings.dividerSymbolC)
         return modified
     }
 
@@ -39,6 +43,10 @@ class ApplicationSettingsConfigurable : Configurable {
         settings.commentSymbol = mySettingsComponent!!.commentText
         settings.lineLength = mySettingsComponent!!.lineLength
         settings.dividerSymbol = mySettingsComponent!!.dividerText
+        settings.lineLengthB = mySettingsComponent!!.lineLengthB
+        settings.dividerSymbolB = mySettingsComponent!!.dividerTextB
+        settings.lineLengthC = mySettingsComponent!!.lineLengthC
+        settings.dividerSymbolC = mySettingsComponent!!.dividerTextC
     }
 
     override fun reset() {
@@ -46,6 +54,10 @@ class ApplicationSettingsConfigurable : Configurable {
         mySettingsComponent!!.commentText = settings.commentSymbol
         mySettingsComponent!!.lineLength = settings.lineLength
         mySettingsComponent!!.dividerText = settings.dividerSymbol
+        mySettingsComponent!!.lineLengthB = settings.lineLengthB
+        mySettingsComponent!!.dividerTextB = settings.dividerSymbolB
+        mySettingsComponent!!.lineLengthC = settings.lineLengthC
+        mySettingsComponent!!.dividerTextC = settings.dividerSymbolC
     }
 
     override fun disposeUIResources() {

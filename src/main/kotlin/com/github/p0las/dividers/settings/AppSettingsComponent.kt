@@ -16,6 +16,10 @@ class AppSettingsComponent {
     private val myCommentText = JBTextField()
     private val myLineLength = JBTextField()
     private val myDividerText = JBTextField()
+    private val myLineLengthB = JBTextField()
+    private val myDividerTextB = JBTextField()
+    private val myLineLengthC = JBTextField()
+    private val myDividerTextC = JBTextField()
 
 
     init {
@@ -23,6 +27,10 @@ class AppSettingsComponent {
                 .addLabeledComponent(JBLabel("comment symbol: "), myCommentText, 1, false)
                 .addLabeledComponent(JBLabel("line length: "), myLineLength, 1, false)
                 .addLabeledComponent(JBLabel("divider symbol: "), myDividerText, 1, false)
+                .addLabeledComponent(JBLabel("line length B: "), myLineLengthB, 1, false)
+                .addLabeledComponent(JBLabel("divider symbol B: "), myDividerTextB, 1, false)
+            .addLabeledComponent(JBLabel("triple line length: "), myLineLengthC, 1, false)
+            .addLabeledComponent(JBLabel("triple divider symbol: "), myDividerTextC, 1, false)
                 .addComponentFillVertically(JPanel(), 0)
                 .panel
     }
@@ -48,4 +56,26 @@ class AppSettingsComponent {
             myDividerText.text = newText
         }
 
+    var lineLengthB: String
+        get() = myLineLengthB.text
+        set(newText) {
+            myLineLengthB.text = newText
+        }
+
+    var dividerTextB: String
+        get() = myDividerTextB.text
+        set(newText) {
+            myDividerTextB.text = newText
+        }
+    var lineLengthC: String
+        get() = myLineLengthC.text
+        set(newText) {
+            myLineLengthC.text = newText
+        }
+
+    var dividerTextC: String
+        get() = myDividerTextC.text
+        set(newText) {
+            myDividerTextC.text = newText
+        }
 }

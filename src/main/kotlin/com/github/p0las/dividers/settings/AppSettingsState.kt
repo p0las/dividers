@@ -16,7 +16,11 @@ import com.intellij.util.xmlb.XmlSerializerUtil
 class AppSettingsState : PersistentStateComponent<AppSettingsState?> {
     var commentSymbol = "#"
     var lineLength = "140"
+    var lineLengthB = "140"
+    var lineLengthC = "140"
     var dividerSymbol = "-"
+    var dividerSymbolB = "="
+    var dividerSymbolC = "="
 
 
     override fun getState(): AppSettingsState? {
